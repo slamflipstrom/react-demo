@@ -4,9 +4,15 @@ import "./index.css";
 import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
 
-import { ApolloClient, ApolloProvider } from "react-apollo";
+import { ApolloClient, ApolloProvider, createNetworkInterface } from "react-apollo";
 
-const client = new ApolloClient();
+const networkInterface = createNetworkInterface({
+  uri: "https://api.github.com/graphql"
+});
+
+const client = new ApolloClient({
+  networkInterface: networkInterface
+});
 
 ReactDOM.render(
   <ApolloProvider client={client}>

@@ -1,4 +1,17 @@
 import React, { Component } from "react";
+import { gql, graphql } from "react-apollo";
+
+const Query = gql`
+  query {
+    viewer {
+      name
+      email
+      company
+    }
+  }
+`;
+
+const ProfileComponentWithData = graphql(Query)(ProfileComponent);
 
 class ProfileComponent extends Component {
   render() {
