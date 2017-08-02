@@ -11,8 +11,6 @@ const Query = gql`
   }
 `;
 
-const ProfileComponentWithData = graphql(Query)(ProfileComponent);
-
 class ProfileComponent extends Component {
   render() {
     return (
@@ -24,5 +22,7 @@ class ProfileComponent extends Component {
     );
   }
 }
+
+const ProfileComponentWithData = graphql(Query)(ProfileComponent);
 
 export default ProfileComponent;
